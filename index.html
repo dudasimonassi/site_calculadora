@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body{
+            font: normal 18pt Arial;
+        }
+        input{
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+        #res_soma, #res_sub, #res_div, #res_mul, #res_por{
+            margin-top: 20pt;
+        }
+        .titulo{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Calculadora</h1>
+    <h2 class="tit">Soma</h2>
+    <input type="number" name="num1" id="num1_soma"> +
+    <input type="number" name="num2" id="num2_soma">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res_soma">Resultado:</div>
+    <h2 class="tit">Subtração</h2>
+    <input type="number" name="num1" id="num1_sub"> -
+    <input type="number" name="num2" id="num2_sub">
+    <input type="button" value="Subtrair" onclick="sub()">
+    <div id="res_sub">Resultado:</div>
+    <h2 class="tit">Divisão</h2>
+    <input type="number" name="num1" id="num1_div"> /
+    <input type="number" name="num2" id="num2_div">
+    <input type="button" value="Dividir" onclick="div()">
+    <div id="res_div">Resultado:</div>
+    <h2 class="tit">Multiplicação</h2>
+    <input type="number" name="num1" id="num1_mul"> x
+    <input type="number" name="num2" id="num2_mul">
+    <input type="button" value="Multiplicar" onclick="mul()" style="width: fit-content;">
+    <div id="res_mul">Resultado:</div>
+    <h2 class="tit">Porcentagem</h2>
+    <input type="number" name="num1" id="num1_por"> % de 
+    <input type="number" name="num2" id="num2_por">
+    <input type="button" value="Calcular" onclick="por()" style="width: fit-content ;">
+    <div id="res_por">Resultado:</div>
+    <script>
+        function somar(){
+            var tx1 = window.document.querySelector("input#num1_soma")
+            var tx2 = window.document.querySelector("input#num2_soma")
+            var res = window.document.querySelector("div#res_soma")
+            var n1 = Number(tx1.value)
+            var n2 = Number(tx2.value)
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
+        }
+        function sub(){
+            var tx1 = window.document.querySelector("input#num1_sub")
+            var tx2 = window.document.querySelector("input#num2_sub")
+            var res = window.document.querySelector("div#res_sub")
+            var n1 = Number(tx1.value)
+            var n2 = Number(tx2.value)
+            var s = n1 - n2
+            res.innerHTML = `A subtração entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
+        }
+        function div(){
+            var tx1 = window.document.querySelector("input#num1_div")
+            var tx2 = window.document.querySelector("input#num2_div")
+            var res = window.document.querySelector("div#res_div")
+            var n1 = Number(tx1.value)
+            var n2 = Number(tx2.value)
+            var s = n1 / n2
+            res.innerHTML = `A divisão de ${n1} por ${n2} é igual a <strong>${s}</strong>`
+        }
+        function mul(){
+            var tx1 = window.document.querySelector("input#num1_mul")
+            var tx2 = window.document.querySelector("input#num2_mul")
+            var res = window.document.querySelector("div#res_mul")
+            var n1 = Number(tx1.value)
+            var n2 = Number(tx2.value)
+            var s = n1 * n2
+            res.innerHTML = `A multiplicação de ${n1} por ${n2} é igual a <strong>${s}</strong>`
+        }
+        function por(){
+            var tx1 = window.document.querySelector("input#num1_por")
+            var tx2 = window.document.querySelector("input#num2_por")
+            var res = window.document.querySelector("div#res_por")
+            var n1 = Number(tx1.value)
+            var n2 = Number(tx2.value)
+            var s = (n1 * n2)/100
+            res.innerHTML = `${n1}% de ${n2} é igual a <strong>${s}</strong>`
+        }
+    </script>
+</body>
+</html>
